@@ -1,11 +1,11 @@
 """
 aio.core
 """
+import os
 import sys
 from setuptools import setup, find_packages
 
-from aio.core import __version__ as version
-
+version = "0.0.1"
 
 install_requires = [
     'setuptools']
@@ -15,12 +15,21 @@ if sys.version_info < (3, 4):
 
 tests_require = install_requires + ['aio.testing']
 
+def read(*rnames):
+    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+
+long_description = read("README.rst")
+
+
 setup(
     name='aio.core',
     version=version,
     description="Aio core utils",
+    long_description=long_description,
     classifiers=[
-        "Programming Language :: Python 3.4",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python :: 3.4",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
     keywords='',
