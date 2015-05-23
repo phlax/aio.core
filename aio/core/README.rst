@@ -44,4 +44,4 @@ BadConfiguration
   ...     get_configuration(config, "foo", "bar", int)
   ... except BadConfiguration as e:
   ...     print(e)
-  Configuration is bad: expected type int, but got "baz"
+  Configuration is bad: foo:bar expected type int, but got "baz"
