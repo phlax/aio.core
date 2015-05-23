@@ -1,6 +1,5 @@
 
 
-
 class MissingConfiguration(Exception):
     pass
 
