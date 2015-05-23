@@ -33,8 +33,8 @@ BadConfiguration
   ...         option_type(option_value)
   ...     except ValueError:
   ...         raise BadConfiguration(
-  ...             'Configuration is bad: expected type %s, but got "%s"' % (
-  ...                 option_type.__name__, option_value))
+  ...             'Configuration is bad: %s:%s expected type %s, but got "%s"' % (
+  ...                 section, option, option_type.__name__, option_value))
 
   >>> config = ConfigParser()
   >>> config.read_dict({"foo": {"bar": "baz"}})
