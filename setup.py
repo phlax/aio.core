@@ -18,7 +18,20 @@ tests_require = install_requires + ['aio.testing']
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-long_description = read("README.rst")
+long_description = (
+    'Detailed documentation\n'
+    + '**********************\n'
+    + '\n'
+    + read("README.rst")
+    + '\n')
+
+try:
+    long_description += (
+        '\n'
+        + read("aio", "core", "README.rst")
+        + '\n')
+except FileNotFoundError:
+    pass
 
 
 setup(
@@ -40,6 +53,7 @@ setup(
     packages=find_packages(),
     namespace_packages=['aio'],
     include_package_data=True,
+    package_data={'': ['*.rst']},    
     zip_safe=False,
     tests_require=tests_require,
     install_requires=install_requires,
