@@ -1,6 +1,7 @@
 aio.core.exceptions usage
 =========================
 
+
 MissingConfiguration
 --------------------
 
@@ -17,7 +18,7 @@ MissingConfiguration
   
   >>> try:
   ...     get_configuration(ConfigParser(), "foo", "bar")
-  ... except Exception as e:
+  ... except MissingConfiguration as e:
   ...     print(e)
   Configuration option is missing: foo:bar
 
