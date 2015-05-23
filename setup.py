@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 version = "0.0.3"
 
 install_requires = [
-    'setuptools']
+    'distribute']
 
 if sys.version_info < (3, 4):
     install_requires += ['asyncio']
@@ -54,7 +54,6 @@ setup(
     packages=find_packages(),
     namespace_packages=['aio'],
     include_package_data=True,
-    package_data={'': ['*.rst']},
     zip_safe=False,
     tests_require=tests_require,
     install_requires=install_requires,
