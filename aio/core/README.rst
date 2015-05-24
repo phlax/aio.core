@@ -45,3 +45,21 @@ BadConfiguration
 ... except BadConfiguration as e:
 ...     print(e)
 Configuration is bad: foo:bar expected type int, but got "baz"
+
+
+CommandError
+------------
+  
+>>> from aio.core.exceptions import CommandError  
+
+>>> def run_command(command):
+...     options = ["egg", "chips"]
+...     if command not in options:
+...         raise CommandError("This command cannot be called with %s" % command)
+
+
+>>> try:
+...     run_command("spam")
+... except CommandError as e:
+...     print(e)
+This command cannot be called with spam
