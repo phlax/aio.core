@@ -6,3 +6,7 @@ class MissingConfiguration(Exception):
 
 class BadConfiguration(Exception):
     pass
+
+
+class CommandError(Exception):
+    pass
